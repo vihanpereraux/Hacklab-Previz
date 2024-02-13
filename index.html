@@ -5,13 +5,47 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>HackLab Previz</title>
 </head>
 
 <body>
-  <div id="app"></div>
-  <h1>HackLab Previz Comes here</h1>
+  <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+  
+  <script  type="text/javascript" src="./assets/js/patch.js" async></script>
 
+  <script type="text/javascript">
+
+    function showError(errId, errMsg) {
+      // handle critical errors here if needed
+    }
+
+    function patchInitialized(patch) {
+      // You can now access the patch object (patch), register variable watchers and so on
+    }
+
+    function patchFinishedLoading(patch) {
+      // The patch is ready now, all assets have been loaded
+    }
+
+    document.addEventListener("CABLES.jsLoaded", function (event) {
+      CABLES.patch = new CABLES.Patch({
+        patch: CABLES.exportedPatch,
+        "prefixAssetPath": "",
+        "assetPath": "assets/textures/",
+        "jsPath": "js/",
+        "glCanvasId": "glcanvas",
+        "glCanvasResizeToWindow": true,
+        "onError": showError,
+        "onPatchLoaded": patchInitialized,
+        "onFinishedLoading": patchFinishedLoading,
+        "canvas": { "alpha": true, "premultipliedAlpha": true } // make canvas transparent
+      });
+    });
+
+    // disable rubberband effect on mobile devices
+    document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
+  </script>
 </body>
 
 </html>

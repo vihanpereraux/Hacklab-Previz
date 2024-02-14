@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    background: black;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    font-family: 'DM Sans';
+}
+
+.reference-block{
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+}
+.reference-block:nth-child(1){
+    background: none;
+    left: 0;
+    top: 0;
+}
+.reference-block:nth-child(1) p{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    color: white !important;
+    top: 0;
+    left: 20px;
+    font-size: 13px !important;
+    font-weight: 500;
+}
+.reference-block:nth-child(2){
+    background: none;
+    right: 0;
+    top: 0;
+}
+.reference-block:nth-child(2) p{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    color: white !important;
+    top: 0;
+    left: 20px;
+    font-size: 13px !important;
+    font-weight: 500;
+}
+.reference-block:nth-child(3){
+    background: none;
+    left: 0;
+    bottom: 0;
+}
+.reference-block:nth-child(3) p{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    color: white !important;
+    top: 0 !important;
+    left: 20px;
+    font-size: 13px !important;
+    font-weight: 500;
+}
+.reference-block:nth-child(4){
+    background: none;
+    right: 0;
+    bottom: 0;
+}
+.reference-block:nth-child(4) p{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    color: white !important;
+    top: 0;
+    left: 20px;
+    font-size: 13px !important;
+    font-weight: 500;
+}
+
+
+.video-class{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: fill;
+}
